@@ -1,6 +1,7 @@
 kind: Deployment
 metadata:
   name: frontend
+  namespace: dev
 spec:
   selector:
     matchLabels:
@@ -13,7 +14,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: {{ IMAGE }}
+          image: udacityshop/frontend:latest
           ports:
           - containerPort: 8080
           readinessProbe:
