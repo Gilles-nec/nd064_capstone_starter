@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-nodeport
-  namespace: argocd
+  namespace: prod
 spec:
   ports:
   - name: https
     protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 8080
     nodePort: 30040
   selector:
