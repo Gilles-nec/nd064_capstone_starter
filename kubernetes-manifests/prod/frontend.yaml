@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: udacityshop/frontend:latest
+          image: udacityshop/frontend:sha-44ae54f
           ports:
           - containerPort: 8080
           readinessProbe:
