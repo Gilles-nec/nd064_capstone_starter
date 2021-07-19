@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: udacityshop/currencyservice:latest
+        image: udacityshop/currencyservice:sha-44ae54f
         ports:
         - name: grpc
           containerPort: 7000
