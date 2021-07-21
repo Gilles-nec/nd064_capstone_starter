@@ -47,6 +47,14 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/adservice
           tags: |
             type=sha
+      - name: Ad Service meta
+        id: ad_meta1
+        uses: crazy-max/ghaction-docker-meta@v2
+        with:
+          images: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/adservice-v2
+          tags: |
+            type=sha
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
@@ -88,3 +96,14 @@ jobs:
           push: true
           tags: ${{ steps.ad_meta.outputs.tags }}
           labels: ${{ steps.ad_meta.outputs.labels }}
+      
+      - name: Build and push Ad Service-v2
+        uses: docker/build-push-action@v2
+        with:
+          context: src/adservice-v2
+          file: src/adservice-v2/Dockerfile
+          platforms: linux/amd64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta5.outputs.tags }}
+          labels: ${{ steps.docker_meta5.outputs.labels }}
+
