@@ -7,7 +7,7 @@ metadata:
   name: grafana-nodeport
 spec:
   ports:
-  - name: http
+  - name: https
     port: 80
     protocol: TCP
     targetPort: 3000
