@@ -104,6 +104,6 @@ jobs:
           file: src/adservice-v2/Dockerfile
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.docker_meta5.outputs.tags }}
-          labels: ${{ steps.docker_meta5.outputs.labels }}
+          tags: ${{ steps.ad_meta1.outputs.tags }}
+          labels: ${{ steps.ad_meta1.outputs.labels }}
 
