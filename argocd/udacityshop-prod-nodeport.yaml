@@ -5,12 +5,11 @@ metadata:
   namespace: prod
 spec:
   ports:
-  - name: https
+  - name: http
+    port: 80
     protocol: TCP
-    port: 8080
     targetPort: 8080
     nodePort: 30040
   selector:
     app: frontend
-    namespace: prod
   type: NodePort
